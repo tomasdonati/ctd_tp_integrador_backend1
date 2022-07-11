@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class TpIntegradorConsultorioApplication {
 
 	public static void main(String[] args) {
-		PropertyConfigurator.configure("log4j.properties");
+		PropertyConfigurator.configure("src/log4j.properties");
 		SpringApplication.run(TpIntegradorConsultorioApplication.class, args);
 	}
 }
