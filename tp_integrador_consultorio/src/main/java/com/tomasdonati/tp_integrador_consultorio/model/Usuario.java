@@ -18,15 +18,18 @@ public class Usuario implements UserDetails {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     @Column
-    private String nombre, username,email,password;
+    private String username;
+    @Column
+    private String email;
+    @Column
+    private String password;
     @Enumerated(EnumType.STRING)
     private UsuarioRoles rolesUsuario;
 
     public Usuario() {
     }
 
-    public Usuario(String nombre, String username, String email, String password, UsuarioRoles rolesUsuario) {
-        this.nombre = nombre;
+    public Usuario(String username, String email, String password, UsuarioRoles rolesUsuario) {
         this.username = username;
         this.email = email;
         this.password = password;
