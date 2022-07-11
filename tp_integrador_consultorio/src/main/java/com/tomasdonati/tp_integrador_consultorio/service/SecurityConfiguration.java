@@ -37,9 +37,14 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/").hasRole("ADMIN")
                 .antMatchers("/turnos/").hasRole("ADMIN")
                 .antMatchers("/turnosLista.html/**").hasRole("ADMIN")
-                .anyRequest().authenticated()
-                .and().formLogin()
-                .and().logout();
+                .anyRequest()
+                .authenticated()
+                .and()
+                .formLogin()
+                .and()
+                .logout()
+                .and()
+                .httpBasic();
     }
     @Bean
     public DaoAuthenticationProvider daoAuthenticationProvider(){
