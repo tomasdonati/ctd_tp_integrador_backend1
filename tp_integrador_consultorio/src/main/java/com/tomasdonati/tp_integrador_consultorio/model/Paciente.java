@@ -1,5 +1,6 @@
 package com.tomasdonati.tp_integrador_consultorio.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -25,8 +26,9 @@ public class Paciente {
     private int dni;
     @Column
     private LocalDate fechaIngreso;
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_domicilio", referencedColumnName = "id")
+    @JoinColumn(name = "domicilio_id", referencedColumnName = "id")
     private Domicilio domicilio;
 
 
